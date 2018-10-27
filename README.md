@@ -35,6 +35,8 @@ This project is build in python 3.6, so make sure you have python 3 installed (a
 
 The algorithm tries to locate a file `data/data.cvs` (with has to have the said structure).
 
+A sample dataset is provided under [`sample/data.csv`](/sample/data.csv).
+
 Note that a large dataset can take a (very, very) long time to process, you might have to modify this algorithm.
 
 ## Math
