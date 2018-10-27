@@ -18,14 +18,14 @@ class Groups:
     while sum(self.current) < total:
       i = 0
       while i < len(self.current) and sum(self.current) < total:
-        if self.max_total[i] > self.current[i]:
+        if self.max_lst[i] > self.current[i]:
           self.current[i] += 1
         i += 1
 
     while sum(self.current) > total:
       i = 0
       while i < len(self.current) and sum(self.current) > total:
-        if self.min_total[i] < self.current[i]:
+        if self.min_lst[i] < self.current[i]:
           self.current[i] -= 1
         i += 1
 
@@ -35,7 +35,6 @@ class Groups:
       while self.total > sum(self.current) and self.current[i] < self.max_lst[i]:
         self.current[i] += 1
 
-    print(type(self.min_lst))
     self.combinations = combinations.combinations_fixed_sum_limits(self.total, len(self.current), self.min_lst, self.max_lst)
 
   def __iter__(self):
