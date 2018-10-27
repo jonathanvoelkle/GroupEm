@@ -33,7 +33,7 @@ This project is build in python 3.6, so make sure you have python 3 installed (a
 
 ## Usage
 
-The algorithm tries to locate a file `data/data.cvs` (with has to have the said structure).
+The algorithm tries to locate a file `data/data.csv` (with has to have the said structure).
 
 A sample dataset is provided under [`sample/data.csv`](/sample/data.csv).
 
