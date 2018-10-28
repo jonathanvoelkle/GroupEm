@@ -67,16 +67,6 @@ Which group-size is the best, has to be evaluated through $S(solution)$.
 
 The code uses a integer based rating system (e.g. stars, higher value means higher preferences) (not the propsed 0 to 1 interval) and transforms them into a cost function to be used in `linear_sum_assignment()`.
 
-## Roadmap
-
-- [x] Set standards
-- [x] Figure out (most of) the math
-- [x] Start to code
-- [ ] Write documentation (and find a way to diplay math)
-- [ ] Figure out license
-
-<!-- TBC -->
-
 ## FAQ
 
 <dl>
