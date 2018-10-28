@@ -15,7 +15,7 @@ splicing data
 # [0 ,  2: ] group info, eg name or index
 # [1:4, 2: ] = groupsize
 # [4: , 2:] = choice
-inputdata = np.genfromtxt('data/data.csv', dtype='|U5', delimiter=';')
+inputdata = np.genfromtxt('data/data.csv', dtype='|U8', delimiter=';')
 print(inputdata)
 
 # np array
@@ -34,6 +34,7 @@ groupsize = inputdata[1:4, 2:].astype(int)
 print(groupsize)
 
 names = inputdata[4: , 1 ]
+groupnames = inputdata[0, 2:]
 
 print(choice.shape)
 
@@ -41,11 +42,11 @@ print(choice.shape)
 '''
 transforming data
 '''
-data = choice - np.amin(choice) + 1
-data = data / np.amax(data)
-data = - np.log(data)
+transformed_choice = choice - np.amin(choice) + 1
+transformed_choice = transformed_choice / np.amax(transformed_choice)
+transformed_choice = - np.log(transformed_choice)
 
-print(data)
+print(transformed_choice)
 
 
 '''
@@ -53,33 +54,47 @@ group combinations
 '''
 possible_groups = groups.Groups(groupsize.astype(int), choice.shape[0])
 
-def output_solution(names, choice_interval, col_ind):
+
+'''
+match linear_sum_assignment to original group
+'''
+def output_solution(choice_interval, col_ind):
   assigned_group = []
   for val in col_ind:
     assigned_group.append(next(x[0] for x in enumerate(choice_interval) if x[1] > val))
   return assigned_group
 
 
+'''
+calculate the overall choice satisfaction
+'''
+def rate_assigned_groups(assigned_groups, transformed_choice):
+  rating = 0
+  for i, gr in enumerate(assigned_groups):
+    rating += transformed_choice[i][gr]
+  return rating
 
-solutions = []
+
+'''
+find the best best match in all possible_groups
+'''
+best_solution = []
+best_solution_rating = np.amax(transformed_choice) * choice.shape[0]
 
 for i in possible_groups:
-  data_spread = np.repeat(data, i, axis=1)
+  transformed_choice_spread = np.repeat(transformed_choice, i, axis=1)
+  row_ind, col_ind = linear_sum_assignment(transformed_choice_spread)
   choice_interval = np.cumsum(i)
-  row_ind, col_ind = linear_sum_assignment(data_spread)
-  # print('choice', choice_interval)
-  # print('names', names)
-  # print('another solution')
-  # print('solved', col_ind)
+  current_assigned_groups = output_solution(choice_interval, col_ind)
 
-  solutions.append(output_solution(names, choice_interval, col_ind))
-
-
-print(solutions)
+  rating = rate_assigned_groups(current_assigned_groups, transformed_choice)
+  if rating < best_solution_rating:
+    best_solution = current_assigned_groups
+    best_solution_rating = rating
 
 
-
-
-
-
-
+'''
+print the best match
+'''
+for j, val in enumerate(best_solution):
+  print('{:8}  {:8}  {:4}'.format(names[j], groupnames[val], ('(b) ' if (choice[j][val] == np.amax(choice[j])) else '(nb)')))
