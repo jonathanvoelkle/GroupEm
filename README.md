@@ -1,4 +1,4 @@
-# :construction: groupem
+# GroupEm
 
 🙋 Grouping people so everyone is happy.
 
