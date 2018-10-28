@@ -1,6 +1,5 @@
 import numpy as np
 from scipy.optimize import linear_sum_assignment
-np.set_printoptions(threshold=np.nan, linewidth=310)
 
 import groups
 
@@ -16,14 +15,12 @@ splicing data
 # [1:4, 2: ] = groupsize
 # [4: , 2:] = choice
 inputdata = np.genfromtxt('data/data.csv', dtype='|U8', delimiter=';')
-print(inputdata)
 
 # np array
 # containing data
 # rows : people
 # colums : groups
 choice = inputdata[4: , 2:].astype(int)
-print(choice)
 
 # np array
 # column for each group
@@ -31,12 +28,9 @@ print(choice)
 # [1, :] max
 # [2, :] optimal
 groupsize = inputdata[1:4, 2:].astype(int)
-print(groupsize)
 
 names = inputdata[4: , 1 ]
 groupnames = inputdata[0, 2:]
-
-print(choice.shape)
 
 
 '''
@@ -45,8 +39,6 @@ transforming data
 transformed_choice = choice - np.amin(choice) + 1
 transformed_choice = transformed_choice / np.amax(transformed_choice)
 transformed_choice = - np.log(transformed_choice)
-
-print(transformed_choice)
 
 
 '''
