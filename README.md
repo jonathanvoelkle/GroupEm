@@ -6,21 +6,25 @@ If you've ever had to group people together (esp. kids) and everyone wanted some
 
 <!-- TODO -->
 
-## Installation
+## Installation and Usage
 
 This project is build in python 3.6, so make sure you have python 3 installed (at least nobody has tried running this in python 2.x)
 
-<!-- TODO -->
+Then just clone this repo
 
-## Usage
+```shell
+git clone https://github.com/jonathanvoelkle/GroupEm.git
+```
 
-The algorithm tries to locate a file `data/data.csv` (with has to have the said structure).
+and change the input file (optional, see the following).
+
+The programm tries to locate a file `data/data.csv` (with has to have the said structure).
 
 A sample dataset is provided under [`sample/data.csv`](/sample/data.csv).
 
-Note that a large dataset can take a (very, very) long time to process, you might have to modify this algorithm.
+Note that a set of data with a large number people or large group-variability can take a (very, very) long time to process, you might have to modify this algorithm.
 
-## Math
+## Specification and Implementation
 
 ### General assumptions and definitions
 
@@ -76,11 +80,11 @@ The code uses a integer based rating system (e.g. stars, higher value means high
 ## FAQ
 
 <dl>
-  <dt>What does "groupem" stand for?</dt>
-  <dd>Is something people use sometimes.</dd>
-
   <dt>The math in this doc looks weird</dt>
-  <dd>Yeah, we know #3 (If you know a solution, lmk)</dd>
+  <dd>Yeah, I know [#3](../../issues/3) (If you know a solution, let me know, or submit a PR)</dd>
+
+  <dt>I found a bug/have a idea for improvement/etc</dt>
+  <dd>Feel free to submit a PR</dd>
 </dl>
 
 ## Copyright and License
