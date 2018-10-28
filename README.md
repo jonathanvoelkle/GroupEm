@@ -41,6 +41,17 @@ The code assumes you use a integer based rating system (e.g. stars, higher value
 <dl>
   <dt>I found a bug/have a idea for improvement/etc</dt>
   <dd>Feel free to submit a PR</dd>
+
+  <dt>How does the file have to look like</dt>
+  <dd><ul>
+    <li>The first row can include the names of the different groups</li>
+    <li>The second row has to be the minimum size of each group</li>
+    <li>The thrid row has to be the maximum size of each group</li>
+    <li>The fourth row has to be the optimal size of each group (not implemented yet)</li>
+    <li>The first column can include something like an index</li>
+    <li>The second column can include e.g. the name of each person</li>
+    <li>Everything else has to be the rating of each person (of the current row) regarding the group (in the current column)</li>
+  </ul></dd>
 </dl>
 
 ## Copyright and License
