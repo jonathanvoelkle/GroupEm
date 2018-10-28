@@ -78,3 +78,5 @@ The code uses a integer based rating system (e.g. stars, higher value means high
 </dl>
 
 ## Copyright and License
+
+GroupEm is open source software [licensed as MIT](LICENSE)
