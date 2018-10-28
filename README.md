@@ -42,7 +42,7 @@ The code assumes you use a integer based rating system (e.g. stars, higher value
   <dt>I found a bug/have a idea for improvement/etc</dt>
   <dd>Feel free to submit a PR</dd>
 
-  <dt>How does the file have to look like</dt>
+  <dt>How does the file have to look like?</dt>
   <dd><ul>
     <li>The first row can include the names of the different groups</li>
     <li>The second row has to be the minimum size of each group</li>
