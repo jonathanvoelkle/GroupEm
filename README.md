@@ -39,9 +39,6 @@ The code assumes you use a integer based rating system (e.g. stars, higher value
 ## FAQ
 
 <dl>
-  <dt>The math in this doc looks weird</dt>
-  <dd>Yeah, I know (see <a href="https://github.com/jonathanvoelkle/GroupEm/issues/3">#3</a>) (If you know a solution, let me know, or submit a PR)</dd>
-
   <dt>I found a bug/have a idea for improvement/etc</dt>
   <dd>Feel free to submit a PR</dd>
 </dl>
