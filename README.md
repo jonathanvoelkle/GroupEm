@@ -10,13 +10,23 @@ If you've ever had to group people together (esp. kids) and everyone wanted some
 
 This project is build in python 3.6, so make sure you have python 3 installed (at least nobody has tried running this in python 2.x)
 
-Then just clone this repo
+Then just clone this repo and run the programm
 
 ```shell
 git clone https://github.com/jonathanvoelkle/GroupEm.git
+cd groupem
+python3 groupem
 ```
 
-and change the input file (optional, see the following).
+You might have to change the input file (optional, see the following).
+
+If you want to output the assigned groups to a file, you can also run.
+
+```shell
+python3 groupem > f.txt
+```
+
+to save them to a file called `f.txt`.
 
 The programm tries to locate a file `data/data.csv` (with has to have the said structure).
 
