@@ -71,7 +71,7 @@ The code uses a integer based rating system (e.g. stars, higher value means high
 
 <dl>
   <dt>The math in this doc looks weird</dt>
-  <dd>Yeah, I know [#3](https://github.com/jonathanvoelkle/GroupEm/issues/3) (If you know a solution, let me know, or submit a PR)</dd>
+  <dd>Yeah, I know [issue #3](https://github.com/jonathanvoelkle/GroupEm/issues/3) (If you know a solution, let me know, or submit a PR)</dd>
 
   <dt>I found a bug/have a idea for improvement/etc</dt>
   <dd>Feel free to submit a PR</dd>
